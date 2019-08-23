@@ -1,0 +1,13 @@
+term: variable
+    | function_abstraction
+    | function_application
+
+variable: [^A-Za-z0-9]+
+
+function_abstraction: "λ" function_parameter "." function_body
+function_parameter: variable
+function_body: term
+
+function_application: "(function_expression argument_expression)"
+function_expression: term
+argument_expression: term
