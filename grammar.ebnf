@@ -8,6 +8,6 @@ function_abstraction: "λ" function_parameter "." function_body
 function_parameter: name
 function_body: term
 
-function_application: "(function_expression argument_expression)"
+function_application: "(" function_expression argument_expression ")"
 function_expression: term
 argument_expression: term
