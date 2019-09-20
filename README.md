@@ -11,4 +11,10 @@ make_pair     = λx.λy.λz.((z x) y)
 
 (((make_pair identity) apply) select_first)  = identity
 (((make_pair identity) apply) select_second) = apply
+
+true  = select_first
+false = select_second
+cond  = make_pair
+not   = λx.(((cond false) true) x) -> λx.((x false) true)
+and   = λx.λy.(((cond true) y) x)
 ```
