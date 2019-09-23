@@ -17,4 +17,11 @@ false = select_second
 cond  = make_pair
 not   = λx.(((cond false) true) x) -> λx.((x false) true)
 and   = λx.λy.(((cond true) y) x)
+
+zero = λx.x = identity
+succ = λn.λs.((s false) n)
+
+one   = (succ zero) = λs.((s false) λ.x.x)
+two   = (succ one)  = λs.((s false) λs.((s false) λ.x.x))
+three = (succ two)  = λs.((s false) λs.((s false) λs.((s false) λ.x.x)))
 ```
