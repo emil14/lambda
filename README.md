@@ -15,8 +15,8 @@ make_pair     = λx.λy.λz.((z x) y)
 true  = select_first
 false = select_second
 cond  = make_pair
-not   = λx.(((cond false) true) x) -> λx.((x false) true)
-and   = λx.λy.(((cond true) y) x)
+not   = λx.(((cond false) true) x) = λx.((x false) true)
+and   = λx.λy.(((cond true) y) x)  = λx.λy.((x y) false)
 
 zero = λx.x = identity
 succ = λn.λs.((s false) n)
